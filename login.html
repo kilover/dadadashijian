@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 大事件</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/fonts/iconfont.css">
+    <style>
+        body {
+            background: url(assets/images/login_bg.jpg) no-repeat;
+            background-size: cover;
+        }
+        h1 {
+            margin-left: 12%;
+            margin-top: 1%;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .login {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 330px;
+            background-color: #fff;
+        }
+        h2 {
+            width: 100%;
+            height: 60px;
+            background: url(./assets/images/login_title.png) no-repeat center;
+        }
+        .uname,.ukey,.tkey,.sub {
+            display: block;
+            margin: 0 auto 20px;
+            padding-left: 40px;
+            width: 80%;
+            height: 40px;
+            border: #ccc 1px solid;
+            /* border-radius: 3px; */
+        }
+        .tkey,.s3 {
+            display: none;
+        }
+        .sub {
+            padding: 0;
+            font-size: 18px;
+            color: #fff;
+            background-color: #1E9FFF;
+        }
+        .sub:hover {
+            cursor: pointer;
+            opacity: .8;
+        }
+        span {
+            position: absolute;
+        }
+        .s1 {
+            font-size: 25px;
+            top: 20%;
+            left: 12%;
+        }
+        .s2 {
+            font-size: 25px;
+            top: 38%;
+            left: 12%;
+        }
+        .s3 {
+            font-size: 25px;
+            top: 56.5%;
+            left: 12%;
+        }
+
+        .transform {
+            right: 10%;
+            /* bottom: 8%; */
+            bottom: 25%;
+            font-size: 12px;
+        }
+        .transform:hover {
+            cursor: pointer;
+            opacity: .8;
+        }
+        .xianxing {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="login.html"><img src="assets/images/logo.png" alt=""></a></h1>
+
+    <form class="login">
+        <h2></h2>
+        <input type="text" placeholder="请输入用户名" name="uname" class="uname">
+        <input type="password" placeholder="请输入密码" name="ukey" class="ukey">
+        <input type="password" placeholder="再次确认密码" name="tkey" class="tkey">
+        <input type="submit" value="登 录" class="sub">
+        <span class="iconfont s1">&#xe614;</span>
+        <span class="iconfont s2">&#xe6a9;</span>
+        <span class="iconfont s3">&#xe6a9;</span>
+        <span class="transform">注册账号</span>
+    </form>
+
+    <script src="./assets/lib/jquery.js"></script>
+    <script>
+        // 给transform添加点击事件
+        (function(){
+            $('.transform').on('click',function(){
+                if($(this).html() == '注册账号'){
+                    $('.tkey').addClass('xianxing')
+                    $('.s3').addClass('xianxing')
+                    $(this).attr('style', 'bottom:8%').html('登 录')
+                } else {
+                    $('.tkey').removeClass('xianxing')
+                    $('.s3').removeClass('xianxing')
+                    $(this).attr('style', 'bottom:25%').html('注册账号')
+                }
+            })
+        })();
+    </script>
+</body>
+</html>
