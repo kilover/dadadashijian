@@ -115,7 +115,7 @@
                     $('.tkey').addClass('xianxing')
                     $('.s3').addClass('xianxing')
                     $('.sub').val('注 册')
-                    $(this).attr('style', 'bottom:6%').html('已有帐号，去登录')
+                    $(this).attr('style', 'bottom:6%').html('已有帐号，去登录')                    
                 } else {
                     $('.tkey').removeClass('xianxing')
                     $('.s3').removeClass('xianxing')
@@ -137,10 +137,16 @@
         // 设置登录提示
         (function(){
             $('.sub').click(function(){
-                if(!$('.uname').val()){
+                if (!$('.uname').val()) {
                     console.log('请输入用户名');
-                } else if (!$('.ukey').val()){
+                } else if (!$('.ukey').val()) {
                     console.log('请输入密码');
+                } else if ($('.sub').val() == '注 册' && $('.ukey').val() != $('.tkey').val()) {
+                    console.log('密码不一致');
+                } else if ($('.sub').val() == '注 册' && $('.ukey').val() == $('.tkey').val()) {
+                    console.log('进行账号注册');
+                } else {
+                    console.log('进行账号密码校验');
                 }
             })
         })();
@@ -152,11 +158,6 @@
             })
         })();
 
-        // 正则校验
-        (function(){
-            // 1. 用户名正则校验
-            let ming = /[\u4e00-\u9fa5]{6,12}/
-        })();
     </script>
 </body>
 </html>
