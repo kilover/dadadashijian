@@ -114,12 +114,21 @@
                 if($(this).html() == '注册账号'){
                     $('.tkey').addClass('xianxing')
                     $('.s3').addClass('xianxing')
-                    $(this).attr('style', 'bottom:8%').html('登 录')
+                    $('.sub').val('注 册')
+                    $(this).attr('style', 'bottom:8%').html('已有帐号，去登录')
                 } else {
                     $('.tkey').removeClass('xianxing')
                     $('.s3').removeClass('xianxing')
+                    $('.sub').val('登 录')
                     $(this).attr('style', 'bottom:25%').html('注册账号')
                 }
+            })
+        })();
+
+        // 阻止form的默认行为
+        (function(){
+            $('form').on('submit', function(e){
+                e.preventDefault()
             })
         })();
     </script>
