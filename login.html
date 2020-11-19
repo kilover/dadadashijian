@@ -37,7 +37,7 @@
         }
         .uname,.ukey,.tkey,.sub {
             display: block;
-            margin: 0 auto 20px;
+            margin: 5px auto 20px;
             padding-left: 40px;
             width: 80%;
             height: 40px;
@@ -62,24 +62,24 @@
         }
         .s1 {
             font-size: 25px;
-            top: 20%;
+            top: 21.5%;
             left: 12%;
         }
         .s2 {
             font-size: 25px;
-            top: 38%;
+            top: 40%;
             left: 12%;
         }
         .s3 {
             font-size: 25px;
-            top: 56.5%;
+            top: 58%;
             left: 12%;
         }
 
         .transform {
             right: 10%;
-            /* bottom: 8%; */
-            bottom: 25%;
+            /* bottom: 7%; */
+            bottom: 24%;
             font-size: 12px;
         }
         .transform:hover {
@@ -115,12 +115,32 @@
                     $('.tkey').addClass('xianxing')
                     $('.s3').addClass('xianxing')
                     $('.sub').val('注 册')
-                    $(this).attr('style', 'bottom:8%').html('已有帐号，去登录')
+                    $(this).attr('style', 'bottom:6%').html('已有帐号，去登录')
                 } else {
                     $('.tkey').removeClass('xianxing')
                     $('.s3').removeClass('xianxing')
                     $('.sub').val('登 录')
-                    $(this).attr('style', 'bottom:25%').html('注册账号')
+                    $(this).attr('style', 'bottom:24%').html('注册账号')
+                }
+            })
+        })();
+
+        // Enter设为登录键
+        (function(){
+            document.onkeyup = function (e) {
+                if(e.keyCode == 13){
+                    $('.sub').click()
+                };
+            }
+        })();
+
+        // 设置登录提示
+        (function(){
+            $('.sub').click(function(){
+                if(!$('.uname').val()){
+                    console.log('请输入用户名');
+                } else if (!$('.ukey').val()){
+                    console.log('请输入密码');
                 }
             })
         })();
@@ -130,6 +150,12 @@
             $('form').on('submit', function(e){
                 e.preventDefault()
             })
+        })();
+
+        // 正则校验
+        (function(){
+            // 1. 用户名正则校验
+            let ming = /[\u4e00-\u9fa5]{6,12}/
         })();
     </script>
 </body>
