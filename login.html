@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录 - 大事件</title>
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
     <style>
         body {
-            background: url(assets/images/login_bg.jpg) no-repeat;
+            background: url(/assets/images/login_bg.jpg) no-repeat;
             background-size: cover;
         }
         h1 {
@@ -29,11 +29,12 @@
             width: 400px;
             height: 330px;
             background-color: #fff;
+            border-radius: 5px;
         }
         h2 {
             width: 100%;
             height: 60px;
-            background: url(./assets/images/login_title.png) no-repeat center;
+            background: url(/assets/images/login_title.png) no-repeat center;
         }
         .uname,.ukey,.tkey,.sub {
             display: block;
@@ -42,7 +43,7 @@
             width: 80%;
             height: 40px;
             border: #ccc 1px solid;
-            /* border-radius: 3px; */
+            border-radius: 2px;
         }
         .tkey,.s3 {
             display: none;
@@ -92,7 +93,7 @@
     </style>
 </head>
 <body>
-    <h1><a href="login.html"><img src="assets/images/logo.png" alt=""></a></h1>
+    <h1><a href="login.html"><img src="/assets/images/logo.png" alt=""></a></h1>
 
     <form class="login">
         <h2></h2>
@@ -106,7 +107,7 @@
         <span class="transform">注册账号</span>
     </form>
 
-    <script src="./assets/lib/jquery.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
     <script>
         // 给transform添加点击事件
         (function(){
