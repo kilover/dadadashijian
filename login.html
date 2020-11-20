@@ -112,6 +112,9 @@
         // 给transform添加点击事件
         (function(){
             $('.transform').on('click',function(){
+                $('.uname').val('')
+                $('.ukey').val('')
+                $('.tkey').val('')
                 if($(this).html() == '注册账号'){
                     $('.tkey').addClass('xianxing')
                     $('.s3').addClass('xianxing')
